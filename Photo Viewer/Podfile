@@ -7,5 +7,6 @@ target 'Photo Viewer' do
 
   # Pods for Photo Viewer
   pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end

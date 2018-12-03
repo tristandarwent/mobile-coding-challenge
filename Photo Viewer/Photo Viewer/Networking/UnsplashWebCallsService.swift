@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class UnsplashWebCallsService {
     
@@ -43,9 +44,9 @@ class UnsplashWebCallsService {
         sessionManager.request(url).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
-                print(value)
+                print(PhotoBuilder.buildPhotoArray(JSON(value)))
             case .failure(let error):
-                print(error)
+                print("GET PHOTOS ERROR: ", error)
             }
         }
     }
