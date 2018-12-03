@@ -13,6 +13,9 @@
 		FCBF315621B5B822001655B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBF315421B5B822001655B7 /* Main.storyboard */; };
 		FCBF315821B5B823001655B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCBF315721B5B823001655B7 /* Assets.xcassets */; };
 		FCBF315B21B5B823001655B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBF315921B5B823001655B7 /* LaunchScreen.storyboard */; };
+		FCBF316521B5BE4F001655B7 /* UnsplashWebCallsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF316421B5BE4F001655B7 /* UnsplashWebCallsService.swift */; };
+		FCBF316721B5BE5C001655B7 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF316621B5BE5C001655B7 /* Configuration.swift */; };
+		FCBF316921B5C892001655B7 /* UnsplashAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF316821B5C892001655B7 /* UnsplashAuthHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		FCBF315721B5B823001655B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCBF315A21B5B823001655B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCBF315C21B5B823001655B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCBF316421B5BE4F001655B7 /* UnsplashWebCallsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashWebCallsService.swift; sourceTree = "<group>"; };
+		FCBF316621B5BE5C001655B7 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		FCBF316821B5C892001655B7 /* UnsplashAuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAuthHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,9 @@
 		FCBF314F21B5B822001655B7 /* Photo Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				FCBF316621B5BE5C001655B7 /* Configuration.swift */,
+				FCBF316221B5BE1E001655B7 /* Networking */,
+				FCBF316321B5BE27001655B7 /* Model */,
 				FCBF315021B5B822001655B7 /* AppDelegate.swift */,
 				FCBF315221B5B822001655B7 /* ViewController.swift */,
 				FCBF315421B5B822001655B7 /* Main.storyboard */,
@@ -86,6 +95,22 @@
 				FCBF315C21B5B823001655B7 /* Info.plist */,
 			);
 			path = "Photo Viewer";
+			sourceTree = "<group>";
+		};
+		FCBF316221B5BE1E001655B7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FCBF316421B5BE4F001655B7 /* UnsplashWebCallsService.swift */,
+				FCBF316821B5C892001655B7 /* UnsplashAuthHandler.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FCBF316321B5BE27001655B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCBF315321B5B822001655B7 /* ViewController.swift in Sources */,
+				FCBF316521B5BE4F001655B7 /* UnsplashWebCallsService.swift in Sources */,
+				FCBF316921B5C892001655B7 /* UnsplashAuthHandler.swift in Sources */,
+				FCBF316721B5BE5C001655B7 /* Configuration.swift in Sources */,
 				FCBF315121B5B822001655B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
