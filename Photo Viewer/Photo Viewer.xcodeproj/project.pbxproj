@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42E01A69E90FC1088E3CC069 /* Pods_Photo_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0CBDA2D13123362D6D30CBB /* Pods_Photo_Viewer.framework */; };
 		FCBF315121B5B822001655B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF315021B5B822001655B7 /* AppDelegate.swift */; };
 		FCBF315321B5B822001655B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF315221B5B822001655B7 /* ViewController.swift */; };
 		FCBF315621B5B822001655B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBF315421B5B822001655B7 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6DB4F3D29E7C615F384C0370 /* Pods-Photo Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Viewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Viewer/Pods-Photo Viewer.release.xcconfig"; sourceTree = "<group>"; };
+		8C0CE4DF28220538FD428523 /* Pods-Photo Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo Viewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo Viewer/Pods-Photo Viewer.debug.xcconfig"; sourceTree = "<group>"; };
+		C0CBDA2D13123362D6D30CBB /* Pods_Photo_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBF314D21B5B822001655B7 /* Photo Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBF315021B5B822001655B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBF315221B5B822001655B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E01A69E90FC1088E3CC069 /* Pods_Photo_Viewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CD585F23AEAF0A3C6096238 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0CBDA2D13123362D6D30CBB /* Pods_Photo_Viewer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		941D1EB364CAE5D7202574FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C0CE4DF28220538FD428523 /* Pods-Photo Viewer.debug.xcconfig */,
+				6DB4F3D29E7C615F384C0370 /* Pods-Photo Viewer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FCBF314421B5B822001655B7 = {
 			isa = PBXGroup;
 			children = (
 				FCBF314F21B5B822001655B7 /* Photo Viewer */,
 				FCBF314E21B5B822001655B7 /* Products */,
+				941D1EB364CAE5D7202574FD /* Pods */,
+				1CD585F23AEAF0A3C6096238 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCBF315F21B5B823001655B7 /* Build configuration list for PBXNativeTarget "Photo Viewer" */;
 			buildPhases = (
+				B9F0CBA623135F92F268B763 /* [CP] Check Pods Manifest.lock */,
 				FCBF314921B5B822001655B7 /* Sources */,
 				FCBF314A21B5B822001655B7 /* Frameworks */,
 				FCBF314B21B5B822001655B7 /* Resources */,
+				4977B39FF9CCCF4459E97ECD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4977B39FF9CCCF4459E97ECD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Photo Viewer/Pods-Photo Viewer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photo Viewer/Pods-Photo Viewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9F0CBA623135F92F268B763 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Photo Viewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FCBF314921B5B822001655B7 /* Sources */ = {
@@ -280,6 +353,7 @@
 		};
 		FCBF316021B5B823001655B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C0CE4DF28220538FD428523 /* Pods-Photo Viewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +372,7 @@
 		};
 		FCBF316121B5B823001655B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DB4F3D29E7C615F384C0370 /* Pods-Photo Viewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
