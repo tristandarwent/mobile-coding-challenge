@@ -18,6 +18,8 @@ class PhotosViewController: UIViewController {
     // MARK: - Properties
     
     var photos: [Photo] = []
+    var pageNumber = 0
+    var isLoadingPhotos = false
     let photoCellIdentifier = "photo cell"
     
     // MARK: - Functions
@@ -28,17 +30,26 @@ class PhotosViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        UnsplashWebCallsService.shared().getPhotos(success: { photos in
-            self.photos = photos
+        getPhotos()
+    }
+    
+    func getPhotos() {
+        isLoadingPhotos = true
+        pageNumber += 1
+        
+        UnsplashWebCallsService.shared().getPhotos(page: pageNumber, success: { photos in
+            self.photos.append(contentsOf: photos)
             self.collectionView.reloadData()
+            self.isLoadingPhotos = false
         }, failure: {
             // TODO: - Add error handling
             print("Call failed")
+            self.isLoadingPhotos = false
         })
     }
 }
 
-extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
@@ -49,6 +60,19 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.imageView.af_setImage(withURL: photos[indexPath.row].imageUrl)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row >= photos.count - 1 && !isLoadingPhotos {
+            getPhotos()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width: CGFloat = collectionView.bounds.size.width / 2
+        
+        return CGSize(width: width, height: width)
     }
 }
 

@@ -10,4 +10,12 @@ import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        // Remove any processing or images being displayed after cell is dequeued, helps with images displaying incorrectly
+        imageView.af_cancelImageRequest()
+        imageView.image = nil
+    }
 }

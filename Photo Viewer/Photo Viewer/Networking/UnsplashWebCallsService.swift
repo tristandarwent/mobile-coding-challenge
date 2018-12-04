@@ -39,10 +39,14 @@ class UnsplashWebCallsService {
     // MARK: - API Calls
     
     // Grabs list of photos from Unsplash
-    func getPhotos(success: @escaping(_ photos: [Photo]) -> Void, failure: @escaping() -> Void) {
+    func getPhotos(page: Int, success: @escaping(_ photos: [Photo]) -> Void, failure: @escaping() -> Void) {
         let url = baseURL + "photos"
         
-        sessionManager.request(url).validate().responseJSON { response in
+        let parameters : Parameters = [
+            "page": page
+        ]
+        
+        sessionManager.request(url, parameters: parameters).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
