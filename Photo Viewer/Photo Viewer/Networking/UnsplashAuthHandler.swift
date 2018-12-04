@@ -21,6 +21,7 @@ extension UnsplashAuthHandler: RequestAdapter {
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
         var urlRequest = urlRequest
         
+        // Adding Unsplash Access Key to each call using UnsplashWebCallsService sessionManager
         urlRequest.setValue("Client-ID " + Configuration.unsplashAccessKey, forHTTPHeaderField: "Authorization")
         
         return urlRequest

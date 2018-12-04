@@ -38,15 +38,19 @@ class UnsplashWebCallsService {
     
     // MARK: - API CALLS
     
-    func getPhotos() {
+    // Grabs list of photos from Unsplash
+    func getPhotos(success: @escaping(_ photos: [Photo]) -> Void, failure: @escaping() -> Void) {
         let url = baseURL + "photos"
         
         sessionManager.request(url).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
-                print(PhotoBuilder.buildPhotoArray(JSON(value)))
+                let json = JSON(value)
+                let photos = PhotoBuilder.buildPhotoArray(json)
+                success(photos)
             case .failure(let error):
                 print("GET PHOTOS ERROR: ", error)
+                failure()
             }
         }
     }
