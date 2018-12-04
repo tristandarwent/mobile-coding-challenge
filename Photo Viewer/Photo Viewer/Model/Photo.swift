@@ -9,9 +9,9 @@
 import Foundation
 
 class Photo {
-    let imageUrlString: String
+    let imageUrl: URL
     
-    init(imageUrlString: String) {
-        self.imageUrlString = imageUrlString
+    init(imageUrl: URL) {
+        self.imageUrl = imageUrl
     }
 }

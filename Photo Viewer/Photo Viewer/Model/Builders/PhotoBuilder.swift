@@ -28,9 +28,10 @@ struct PhotoBuilder {
     }
     
     static func buildPhoto(_ json: JSON) -> Photo? {
-        if let urlString = json[kKeyUrls][kKeyRegularUrl].string {
-            let photo = Photo(imageUrlString: urlString)
+        if let urlString = json[kKeyUrls][kKeyRegularUrl].string,
+            let url = URL(string: urlString) {
             
+            let photo = Photo(imageUrl: url)
             return photo
         }
         
