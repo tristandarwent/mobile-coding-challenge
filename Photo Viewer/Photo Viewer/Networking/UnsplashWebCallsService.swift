@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class UnsplashWebCallsService {
     
-    // MARK: - Variables
+    // MARK: - Properties
     
     private let baseURL: String
     private let sessionManager = SessionManager()
@@ -36,7 +36,7 @@ class UnsplashWebCallsService {
         return sharedUnsplashWebCallsService
     }
     
-    // MARK: - API CALLS
+    // MARK: - API Calls
     
     // Grabs list of photos from Unsplash
     func getPhotos(success: @escaping(_ photos: [Photo]) -> Void, failure: @escaping() -> Void) {
