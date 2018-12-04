@@ -20,6 +20,7 @@ class PhotosViewController: UIViewController {
     var photos: [Photo] = []
     var pageNumber = 0
     var isLoadingPhotos = false
+    var selectedPhoto: Photo?
     let photoCellIdentifier = "photo cell"
     
     // MARK: - Functions
@@ -47,6 +48,18 @@ class PhotosViewController: UIViewController {
             self.isLoadingPhotos = false
         })
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPhotoDetail" {
+            if let vc = segue.destination as? PhotoDetailViewController,
+                let selectedPhoto = selectedPhoto {
+                vc.photo = selectedPhoto
+                self.selectedPhoto = nil
+            }
+        }
+    }
 }
 
 extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -60,6 +73,11 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.imageView.af_setImage(withURL: photos[indexPath.row].imageUrl)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedPhoto = photos[indexPath.row]
+        performSegue(withIdentifier: "toPhotoDetail", sender: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

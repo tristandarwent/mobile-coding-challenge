@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R4p-DD-0ms">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="W6L-bP-vYx">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="R4p-DD-0ms" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G24-Jv-9sM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fkk-Qf-HKy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3BR-lA-SpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-866" y="133"/>
+        </scene>
         <!--Photos View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -63,13 +78,44 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="H4P-wZ-9jh"/>
                     <connections>
                         <outlet property="collectionView" destination="jnD-fe-Qan" id="Lf1-Tj-1Mx"/>
+                        <segue destination="Qad-6a-z39" kind="show" identifier="toPhotoDetail" id="iLu-rV-6cC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71.200000000000003" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-111" y="133"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="htZ-Fk-fWi">
+            <objects>
+                <viewController id="Qad-6a-z39" customClass="PhotoDetailViewController" customModule="Photo_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LV6-6M-TrA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jOm-hX-Rwq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jOm-hX-Rwq" firstAttribute="trailing" secondItem="Kof-R8-kUD" secondAttribute="trailing" id="CUT-9F-Ksf"/>
+                            <constraint firstItem="jOm-hX-Rwq" firstAttribute="bottom" secondItem="Kof-R8-kUD" secondAttribute="bottom" id="HHQ-0a-s7e"/>
+                            <constraint firstItem="jOm-hX-Rwq" firstAttribute="leading" secondItem="Kof-R8-kUD" secondAttribute="leading" id="nzT-jb-s2M"/>
+                            <constraint firstItem="jOm-hX-Rwq" firstAttribute="top" secondItem="LV6-6M-TrA" secondAttribute="top" id="vVB-rZ-Tg5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kof-R8-kUD"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="jOm-hX-Rwq" id="cqI-sz-Qvp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MRS-hE-dBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
