@@ -81,7 +81,7 @@
                     <navigationItem key="navigationItem" id="H4P-wZ-9jh"/>
                     <connections>
                         <outlet property="collectionView" destination="jnD-fe-Qan" id="Lf1-Tj-1Mx"/>
-                        <segue destination="Qad-6a-z39" kind="show" identifier="toPhotoDetail" id="iLu-rV-6cC"/>
+                        <segue destination="YxS-RP-ggC" kind="show" identifier="toPhotoDetail" id="ifQ-qV-QOE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -91,7 +91,7 @@
         <!--Photo Detail View Controller-->
         <scene sceneID="htZ-Fk-fWi">
             <objects>
-                <viewController id="Qad-6a-z39" customClass="PhotoDetailViewController" customModule="Photo_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoDetailViewController" id="Qad-6a-z39" customClass="PhotoDetailViewController" customModule="Photo_Viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LV6-6M-TrA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +115,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRS-hE-dBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="132.68365817091455"/>
+            <point key="canvasLocation" x="732" y="842"/>
+        </scene>
+        <!--Photo Detail Page View Controller-->
+        <scene sceneID="5nY-3C-00n">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="YxS-RP-ggC" customClass="PhotoDetailPageViewController" customModule="Photo_Viewer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n25-OG-RlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732" y="133"/>
         </scene>
     </scenes>
 </document>

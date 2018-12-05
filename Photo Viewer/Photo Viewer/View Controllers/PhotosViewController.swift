@@ -20,7 +20,7 @@ class PhotosViewController: UIViewController {
     var photos: [Photo] = []
     var pageNumber = 0
     var isLoadingPhotos = false
-    var selectedPhoto: Photo?
+    var selectedIndex: Int?
     let photoCellIdentifier = "photo cell"
     
     // MARK: - Functions
@@ -53,10 +53,11 @@ class PhotosViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPhotoDetail" {
-            if let vc = segue.destination as? PhotoDetailViewController,
-                let selectedPhoto = selectedPhoto {
-                vc.photo = selectedPhoto
-                self.selectedPhoto = nil
+            if let vc = segue.destination as? PhotoDetailPageViewController,
+                let selectedIndex = selectedIndex {
+                vc.photos = photos
+                vc.currentIndex = selectedIndex
+                self.selectedIndex = nil
             }
         }
     }
@@ -76,7 +77,7 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.selectedPhoto = photos[indexPath.row]
+        selectedIndex = indexPath.row
         performSegue(withIdentifier: "toPhotoDetail", sender: nil)
     }
     

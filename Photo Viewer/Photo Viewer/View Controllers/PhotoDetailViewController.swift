@@ -16,6 +16,7 @@ class PhotoDetailViewController: UIViewController {
     
     // MARK: - Properties
     
+    var index: Int?
     var photo: Photo?
 
     // MARK: - Functions
