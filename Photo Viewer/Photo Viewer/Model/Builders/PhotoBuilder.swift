@@ -12,6 +12,7 @@ import SwiftyJSON
 struct PhotoBuilder {
     static let kKeyUrls = "urls"
     static let kKeyRegularUrl = "regular"
+    static let kKeyDescription = "description"
     
     static func buildPhotoArray(_ json: JSON) -> [Photo] {
         var photoArray: [Photo] = []
@@ -32,6 +33,8 @@ struct PhotoBuilder {
             let url = URL(string: urlString) {
             
             let photo = Photo(imageUrl: url)
+            photo.description = json[kKeyDescription].string
+            
             return photo
         }
         

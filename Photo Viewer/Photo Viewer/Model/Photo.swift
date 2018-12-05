@@ -10,6 +10,7 @@ import Foundation
 
 class Photo {
     let imageUrl: URL
+    var description: String?
     
     init(imageUrl: URL) {
         self.imageUrl = imageUrl
